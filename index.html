@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeepSeek Clone</title>
+    
+    <!-- Google AdSense Script -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_ADSENSE_ID"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+    
+    <style>
+        /* CSS Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2a2a2a;
+            cursor: pointer;
+        }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: #0066ff;
+        }
+        
+        /* Ad Container Styles */
+        .ad-container {
+            width: 100%;
+            margin: 1rem 0;
+            text-align: center;
+            min-height: 90px;
+            background: #f1f1f1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        .ad-container ins {
+            display: block;
+            width: 100%;
+        }
+        
+        .hero {
+            text-align: center;
+            padding: 8rem 2rem;
+            background: linear-gradient(45deg, #f0f4ff, #ffffff);
+        }
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #0066ff;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: #555;
+        }
+        .cta {
+            padding: 1rem 2rem;
+            background: #0066ff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+            font-size: 1rem;
+        }
+        .cta:hover {
+            background: #0052cc;
+        }
+        .features {
+            display: flex;
+            gap: 2rem;
+            padding: 4rem 5%;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .feature-card {
+            padding: 2rem;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            width: 300px;
+            text-align: center;
+            background: #fff;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .feature-card h3 {
+            margin-bottom: 1rem;
+            color: #0066ff;
+        }
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: #f8f9fa;
+            margin-top: 2rem;
+        }
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .features {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo" id="deepseek-logo">DeepSeek</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#solutions">Solutions</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header Ad Unit -->
+    <div class="ad-container">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-YOUR_ADSENSE_ID"
+             data-ad-slot="YOUR_HEADER_AD_SLOT"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <h1>Next-Gen AI Solutions</h1>
+        <p>Empowering businesses with deep learning and AI-driven insights.</p>
+        <button class="cta" id="cta-button">Get Started</button>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="products">
+        <div class="feature-card">
+            <h3>AI Research</h3>
+            <p>Cutting-edge deep learning models.</p>
+        </div>
+        <div class="feature-card">
+            <h3>Enterprise Solutions</h3>
+            <p>Customizable AI integrations.</p>
+        </div>
+    </section>
+
+    <!-- Footer Ad Unit -->
+    <div class="ad-container">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-YOUR_ADSENSE_ID"
+             data-ad-slot="YOUR_FOOTER_AD_SLOT"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 DeepSeek Clone. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // JavaScript for interactivity
+        document.addEventListener('DOMContentLoaded', function() {
+            // Redirect to official DeepSeek website when logo or CTA is clicked
+            const deepseekUrl = "https://www.deepseek.com"; // Official DeepSeek URL
+            
+            document.getElementById('deepseek-logo').addEventListener('click', () => {
+                window.location.href = deepseekUrl;
+            });
+
+            document.getElementById('cta-button').addEventListener('click', () => {
+                window.location.href = deepseekUrl;
+            });
+
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            // Add animation to feature cards on scroll
+            const featureCards = document.querySelectorAll('.feature-card');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            featureCards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.5s, transform 0.5s';
+                observer.observe(card);
+            });
+        });
+    </script>
+</body>
+</html>
