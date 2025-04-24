@@ -12,35 +12,26 @@
     <meta property="og:url" content="https://deepseekwebclone.com">
     <meta property="og:image" content="https://deepseekwebclone.com/images/og-image.jpg">
     <title>DeepSeek Web Clone - AI Search & Image Tools</title>
-    <link rel="icon" href="https://www.deepseek.com/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #6366f1;
-            --primary-dark: #4f46e5;
-            --primary-darker: #4338ca;
-            --primary-light: #818cf8;
-            --primary-lighter: #a5b4fc;
+            --primary: #4f46e5;
+            --primary-dark: #4338ca;
+            --primary-light: #6366f1;
             --text: #1f2937;
             --text-light: #6b7280;
-            --text-lighter: #9ca3af;
             --bg: #f9fafb;
             --card-bg: #ffffff;
-            --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            --elevated-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
             --radius: 12px;
-            --radius-lg: 16px;
-            --radius-sm: 8px;
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            --gradient: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            --transition: all 0.3s ease;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
         }
 
         body {
@@ -58,7 +49,7 @@
         /* Header */
         header {
             background-color: var(--card-bg);
-            box-shadow: var(--card-shadow);
+            box-shadow: var(--shadow);
             position: sticky;
             top: 0;
             z-index: 100;
@@ -74,22 +65,20 @@
         .logo {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
             font-size: 1.5rem;
             font-weight: 700;
-            color: var(--primary-dark);
+            color: var(--primary);
             text-decoration: none;
         }
 
         .logo img {
             height: 32px;
-            width: 32px;
-            object-fit: contain;
         }
 
         .nav-links {
             display: flex;
-            gap: 28px;
+            gap: 25px;
         }
 
         .nav-links a {
@@ -98,11 +87,10 @@
             font-weight: 500;
             transition: var(--transition);
             position: relative;
-            font-size: 0.95rem;
         }
 
         .nav-links a:hover {
-            color: var(--primary-dark);
+            color: var(--primary);
         }
 
         .nav-links a::after {
@@ -112,7 +100,7 @@
             height: 2px;
             bottom: -4px;
             left: 0;
-            background: var(--gradient);
+            background-color: var(--primary);
             transition: var(--transition);
         }
 
@@ -132,31 +120,17 @@
         /* Hero Section */
         .hero {
             text-align: center;
-            padding: 80px 0 60px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(99, 102, 241, 0.08) 0%, rgba(255, 255, 255, 0) 70%);
-            z-index: -1;
+            padding: 60px 0 40px;
         }
 
         .hero h1 {
-            font-size: 3rem;
+            font-size: 2.8rem;
             margin-bottom: 20px;
-            background: linear-gradient(to right, var(--primary-dark), var(--primary-darker));
+            background: linear-gradient(to right, var(--primary), var(--primary-dark));
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
             line-height: 1.2;
-            font-weight: 700;
         }
 
         .hero p {
@@ -170,75 +144,69 @@
 
         .cta-buttons {
             display: flex;
-            gap: 16px;
+            gap: 15px;
             justify-content: center;
             margin-top: 30px;
-            flex-wrap: wrap;
         }
 
         .btn {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            padding: 14px 28px;
-            border-radius: var(--radius-sm);
+            padding: 12px 24px;
+            border-radius: 8px;
             font-weight: 600;
             text-decoration: none;
             transition: var(--transition);
             cursor: pointer;
-            gap: 10px;
-            font-size: 1rem;
-            border: none;
+            gap: 8px;
         }
 
         .btn-primary {
-            background: var(--gradient);
+            background-color: var(--primary);
             color: white;
-            box-shadow: 0 4px 14px rgba(79, 70, 229, 0.3);
+            border: none;
         }
 
         .btn-primary:hover {
+            background-color: var(--primary-dark);
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(79, 70, 229, 0.4);
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
         }
 
         .btn-secondary {
             background-color: transparent;
-            color: var(--primary-dark);
+            color: var(--primary);
             border: 2px solid var(--primary);
-            box-shadow: 0 4px 14px rgba(99, 102, 241, 0.1);
         }
 
         .btn-secondary:hover {
-            background-color: rgba(99, 102, 241, 0.08);
+            background-color: rgba(79, 70, 229, 0.1);
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(99, 102, 241, 0.15);
         }
 
         /* Ad Container */
         .ad-container {
             background-color: var(--card-bg);
             border-radius: var(--radius);
-            padding: 16px;
-            margin: 40px auto;
+            padding: 15px;
+            margin: 30px auto;
             text-align: center;
-            box-shadow: var(--card-shadow);
+            box-shadow: var(--shadow);
             max-width: 728px;
-            border: 1px solid rgba(0, 0, 0, 0.05);
         }
 
         .ad-label {
             font-size: 0.75rem;
-            color: var(--text-lighter);
+            color: var(--text-light);
             margin-bottom: 8px;
             text-transform: uppercase;
             letter-spacing: 1px;
-            font-weight: 500;
         }
 
         /* Search Section */
         .search-section {
-            margin: 50px 0;
+            margin: 40px 0;
         }
 
         .search-container {
@@ -249,37 +217,26 @@
         .search-box {
             display: flex;
             border: 1px solid #e5e7eb;
-            border-radius: var(--radius-lg);
+            border-radius: var(--radius);
             overflow: hidden;
             background-color: var(--card-bg);
-            box-shadow: var(--elevated-shadow);
+            box-shadow: var(--shadow);
             margin-bottom: 20px;
-            transition: var(--transition);
-        }
-
-        .search-box:focus-within {
-            border-color: var(--primary-light);
-            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
         }
 
         .search-input {
             flex: 1;
-            padding: 16px 24px;
+            padding: 15px 20px;
             border: none;
             outline: none;
             font-size: 1rem;
-            color: var(--text);
-        }
-
-        .search-input::placeholder {
-            color: var(--text-lighter);
         }
 
         .search-btn {
-            background: var(--gradient);
+            background-color: var(--primary);
             color: white;
             border: none;
-            padding: 0 28px;
+            padding: 0 25px;
             cursor: pointer;
             transition: var(--transition);
             display: flex;
@@ -288,39 +245,23 @@
         }
 
         .search-btn:hover {
-            background: linear-gradient(135deg, var(--primary-light), var(--primary));
+            background-color: var(--primary-dark);
         }
 
         /* Image Optimizer Section */
         .image-optimizer {
             background-color: var(--card-bg);
-            border-radius: var(--radius-lg);
-            padding: 40px;
-            margin: 50px 0;
-            box-shadow: var(--elevated-shadow);
-            border: 1px solid rgba(0, 0, 0, 0.05);
+            border-radius: var(--radius);
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: var(--shadow);
         }
 
         .section-title {
             text-align: center;
-            margin-bottom: 40px;
-            font-size: 2.2rem;
+            margin-bottom: 30px;
+            font-size: 2rem;
             color: var(--text);
-            position: relative;
-            display: inline-block;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: var(--gradient);
-            border-radius: 2px;
         }
 
         .optimizer-container {
@@ -331,177 +272,137 @@
 
         .upload-area {
             border: 2px dashed #e5e7eb;
-            border-radius: var(--radius-lg);
-            padding: 50px 40px;
+            border-radius: var(--radius);
+            padding: 40px;
             text-align: center;
             cursor: pointer;
             transition: var(--transition);
-            background-color: rgba(249, 250, 251, 0.5);
         }
 
         .upload-area:hover {
             border-color: var(--primary-light);
-            background-color: rgba(99, 102, 241, 0.03);
+            background-color: rgba(79, 70, 229, 0.05);
         }
 
         .upload-icon {
-            font-size: 3.5rem;
+            font-size: 3rem;
             color: var(--primary);
-            margin-bottom: 20px;
-            transition: var(--transition);
-        }
-
-        .upload-area:hover .upload-icon {
-            transform: translateY(-5px);
+            margin-bottom: 15px;
         }
 
         .upload-text {
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             color: var(--text-light);
-            font-size: 1.1rem;
         }
 
         .upload-btn {
-            background: var(--gradient);
+            background-color: var(--primary);
             color: white;
             border: none;
-            padding: 12px 24px;
-            border-radius: var(--radius-sm);
+            padding: 10px 20px;
+            border-radius: 6px;
             cursor: pointer;
             transition: var(--transition);
-            font-weight: 500;
-            box-shadow: 0 4px 14px rgba(79, 70, 229, 0.2);
         }
 
         .upload-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(79, 70, 229, 0.3);
+            background-color: var(--primary-dark);
         }
 
         .optimizer-controls {
             display: none;
             flex-direction: column;
-            gap: 24px;
-            background-color: rgba(249, 250, 251, 0.7);
-            padding: 30px;
-            border-radius: var(--radius);
-            border: 1px solid rgba(0, 0, 0, 0.05);
+            gap: 20px;
         }
 
         .control-group {
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 10px;
         }
 
         .control-group label {
             font-weight: 500;
-            color: var(--text);
         }
 
         .slider-container {
             display: flex;
             align-items: center;
-            gap: 16px;
+            gap: 15px;
         }
 
         .slider {
             flex: 1;
-            height: 8px;
+            height: 6px;
             -webkit-appearance: none;
             background: #e5e7eb;
-            border-radius: 4px;
+            border-radius: 3px;
             outline: none;
-            transition: var(--transition);
-        }
-
-        .slider:hover {
-            background: #d1d5db;
         }
 
         .slider::-webkit-slider-thumb {
             -webkit-appearance: none;
-            width: 20px;
-            height: 20px;
+            width: 18px;
+            height: 18px;
             background: var(--primary);
             border-radius: 50%;
             cursor: pointer;
-            border: 3px solid white;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-            transition: var(--transition);
-        }
-
-        .slider::-webkit-slider-thumb:hover {
-            background: var(--primary-dark);
-            transform: scale(1.1);
         }
 
         .slider-value {
-            min-width: 50px;
+            min-width: 40px;
             text-align: center;
             font-weight: 600;
-            color: var(--primary-dark);
-            font-size: 1.1rem;
         }
 
         .format-options {
             display: flex;
-            gap: 12px;
+            gap: 15px;
             flex-wrap: wrap;
         }
 
         .format-btn {
-            padding: 10px 20px;
+            padding: 8px 16px;
             border: 1px solid #e5e7eb;
-            border-radius: var(--radius-sm);
+            border-radius: 6px;
             background-color: white;
             cursor: pointer;
             transition: var(--transition);
-            font-weight: 500;
-            color: var(--text-light);
-        }
-
-        .format-btn:hover {
-            border-color: var(--primary-light);
-            color: var(--primary-dark);
         }
 
         .format-btn.active {
-            background: var(--gradient);
+            background-color: var(--primary);
             color: white;
             border-color: var(--primary);
-            box-shadow: 0 4px 10px rgba(79, 70, 229, 0.2);
         }
 
         .optimize-btn {
             align-self: flex-start;
-            background: var(--gradient);
+            background-color: var(--primary);
             color: white;
             border: none;
-            padding: 14px 28px;
-            border-radius: var(--radius-sm);
+            padding: 12px 24px;
+            border-radius: 6px;
             cursor: pointer;
             font-weight: 600;
             transition: var(--transition);
-            box-shadow: 0 4px 14px rgba(79, 70, 229, 0.3);
-            margin-top: 10px;
         }
 
         .optimize-btn:hover {
+            background-color: var(--primary-dark);
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(79, 70, 229, 0.4);
         }
 
         .result-container {
             display: none;
-            margin-top: 40px;
+            margin-top: 30px;
             border-top: 1px solid #e5e7eb;
-            padding-top: 40px;
+            padding-top: 30px;
         }
 
         .comparison {
             display: flex;
-            gap: 40px;
+            gap: 30px;
             margin-bottom: 30px;
             flex-wrap: wrap;
         }
@@ -511,146 +412,95 @@
             min-width: 300px;
         }
 
-        .image-box h3 {
-            margin-bottom: 16px;
-            font-size: 1.3rem;
-            color: var(--text);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .image-box h3 i {
-            color: var(--primary);
-        }
-
         .image-box img {
             width: 100%;
             border-radius: var(--radius);
-            box-shadow: var(--elevated-shadow);
-            transition: var(--transition);
-        }
-
-        .image-box img:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+            box-shadow: var(--shadow);
         }
 
         .image-info {
-            margin-top: 16px;
+            margin-top: 10px;
             display: flex;
             justify-content: space-between;
-            color: var(--text-light);
-            font-size: 0.9rem;
-        }
-
-        .image-info span:first-child {
-            color: var(--primary-dark);
-            font-weight: 500;
         }
 
         .download-btn {
             display: inline-flex;
             align-items: center;
-            gap: 10px;
-            background: var(--gradient);
+            gap: 8px;
+            background-color: var(--primary);
             color: white;
-            padding: 14px 28px;
-            border-radius: var(--radius-sm);
+            padding: 10px 20px;
+            border-radius: 6px;
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 500;
             transition: var(--transition);
-            box-shadow: 0 4px 14px rgba(79, 70, 229, 0.3);
         }
 
         .download-btn:hover {
+            background-color: var(--primary-dark);
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(79, 70, 229, 0.4);
         }
 
         /* Features Section */
         .features {
-            margin: 80px 0;
+            margin: 60px 0;
         }
 
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
-            margin-top: 50px;
+            margin-top: 40px;
         }
 
         .feature-card {
             background-color: var(--card-bg);
-            border-radius: var(--radius-lg);
-            padding: 40px 30px;
-            box-shadow: var(--elevated-shadow);
+            border-radius: var(--radius);
+            padding: 30px;
+            box-shadow: var(--shadow);
             transition: var(--transition);
-            border: 1px solid rgba(0, 0, 0, 0.05);
-            text-align: center;
         }
 
         .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
 
         .feature-icon {
-            font-size: 2.8rem;
+            font-size: 2.5rem;
             color: var(--primary);
-            margin-bottom: 24px;
-            transition: var(--transition);
-        }
-
-        .feature-card:hover .feature-icon {
-            transform: scale(1.1);
+            margin-bottom: 20px;
         }
 
         .feature-card h3 {
-            margin-bottom: 16px;
-            font-size: 1.4rem;
-            color: var(--text);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
         }
 
         .feature-card p {
             color: var(--text-light);
-            font-size: 1rem;
-            line-height: 1.7;
         }
 
         /* Footer */
         footer {
             background-color: var(--card-bg);
-            padding: 80px 0 40px;
-            margin-top: 80px;
-            box-shadow: 0 -2px 20px rgba(0, 0, 0, 0.05);
-            border-top: 1px solid rgba(0, 0, 0, 0.05);
+            padding: 60px 0 30px;
+            margin-top: 60px;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
         }
 
         .footer-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 50px;
-            margin-bottom: 50px;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
         }
 
         .footer-column h3 {
-            margin-bottom: 24px;
-            font-size: 1.2rem;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
             color: var(--text);
-            position: relative;
-            display: inline-block;
-        }
-
-        .footer-column h3::after {
-            content: '';
-            position: absolute;
-            bottom: -8px;
-            left: 0;
-            width: 40px;
-            height: 3px;
-            background: var(--gradient);
-            border-radius: 2px;
         }
 
         .footer-column ul {
@@ -658,51 +508,38 @@
         }
 
         .footer-column ul li {
-            margin-bottom: 14px;
+            margin-bottom: 12px;
         }
 
         .footer-column ul li a {
             color: var(--text-light);
             text-decoration: none;
             transition: var(--transition);
-            font-size: 0.95rem;
-            display: inline-block;
         }
 
         .footer-column ul li a:hover {
-            color: var(--primary-dark);
-            transform: translateX(5px);
+            color: var(--primary);
         }
 
         .social-links {
             display: flex;
-            gap: 16px;
-            margin-top: 20px;
+            gap: 15px;
         }
 
         .social-links a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background-color: rgba(0, 0, 0, 0.05);
             color: var(--text-light);
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             transition: var(--transition);
         }
 
         .social-links a:hover {
-            background: var(--gradient);
-            color: white;
-            transform: translateY(-3px);
+            color: var(--primary);
         }
 
         .copyright {
             text-align: center;
-            padding-top: 40px;
-            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            padding-top: 30px;
+            border-top: 1px solid #e5e7eb;
             color: var(--text-light);
             font-size: 0.9rem;
         }
@@ -718,37 +555,38 @@
         .redirect-btn {
             display: flex;
             align-items: center;
-            gap: 10px;
-            background: var(--gradient);
+            gap: 8px;
+            background-color: var(--primary);
             color: white;
-            padding: 14px 24px;
-            border-radius: 50px;
+            padding: 12px 20px;
+            border-radius: 30px;
             text-decoration: none;
             font-weight: 600;
-            box-shadow: 0 6px 20px rgba(79, 70, 229, 0.3);
+            box-shadow: 0 4px 15px rgba(79, 70, 229, 0.3);
             transition: var(--transition);
         }
 
         .redirect-btn:hover {
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 10px 25px rgba(79, 70, 229, 0.4);
+            background-color: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(79, 70, 229, 0.4);
         }
 
         /* Loading State */
         .loading {
             display: none;
             text-align: center;
-            padding: 40px;
+            padding: 30px;
         }
 
         .spinner {
             border: 4px solid rgba(79, 70, 229, 0.1);
             border-radius: 50%;
             border-top: 4px solid var(--primary);
-            width: 50px;
-            height: 50px;
+            width: 40px;
+            height: 40px;
             animation: spin 1s linear infinite;
-            margin: 0 auto 20px;
+            margin: 0 auto 15px;
         }
 
         @keyframes spin {
@@ -757,16 +595,6 @@
         }
 
         /* Responsive Styles */
-        @media (max-width: 1024px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .section-title {
-                font-size: 2rem;
-            }
-        }
-
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
@@ -790,10 +618,6 @@
                 display: block;
             }
 
-            .hero {
-                padding: 60px 0 40px;
-            }
-
             .hero h1 {
                 font-size: 2.2rem;
             }
@@ -812,39 +636,8 @@
                 max-width: 300px;
             }
 
-            .image-optimizer {
-                padding: 30px 20px;
-            }
-
-            .upload-area {
-                padding: 40px 20px;
-            }
-
-            .optimizer-controls {
-                padding: 20px;
-            }
-
             .comparison {
                 flex-direction: column;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-            
-            .section-title {
-                font-size: 1.8rem;
-            }
-            
-            .feature-card {
-                padding: 30px 20px;
-            }
-            
-            .footer-content {
-                grid-template-columns: 1fr;
-                gap: 30px;
             }
         }
     </style>
@@ -854,12 +647,12 @@
         <div class="container">
             <nav class="navbar">
                 <a href="#" class="logo">
-                    <img src="https://www.deepseek.com/favicon.ico" alt="DeepSeek Logo">
+                    <img src="https://deepseek.com/favicon.ico" alt="DeepSeek Logo">
                     <span>DeepSeek Web</span>
                 </a>
                 <div class="nav-links">
                     <a href="#">Home</a>
-                    <a href="#image-optimizer">Image Tools</a>
+                    <a href="#image-optimizer">Image Optimizer</a>
                     <a href="#features">Features</a>
                     <a href="#">About</a>
                 </div>
@@ -872,17 +665,17 @@
 
     <main class="container">
         <section class="hero">
-            <h1>AI-Powered Search with Advanced Image Tools</h1>
-            <p>Experience next-generation AI search combined with powerful image optimization capabilities for your web projects</p>
+            <h1>AI-Powered Search with Advanced Image Optimization</h1>
+            <p>Get accurate answers and optimize your images for better performance with our powerful AI tools</p>
             
             <div class="cta-buttons">
-                <a href="https://www.deepseek.com" class="btn btn-primary" target="_blank">
+                <a href="https://deepseek.com" class="btn btn-primary" target="_blank">
                     <i class="fas fa-external-link-alt"></i>
                     Visit Official DeepSeek
                 </a>
                 <button class="btn btn-secondary" id="tryDemoBtn">
                     <i class="fas fa-play"></i>
-                    Try Demo Search
+                    Try Demo
                 </button>
             </div>
         </section>
@@ -926,7 +719,7 @@
 
         <!-- Image Optimizer Section -->
         <section class="image-optimizer" id="image-optimizer">
-            <h2 class="section-title">Image Optimization Tool</h2>
+            <h2 class="section-title">Image Optimizer</h2>
             <div class="optimizer-container">
                 <div class="upload-area" id="uploadArea">
                     <div class="upload-icon">
@@ -940,7 +733,7 @@
 
                 <div class="optimizer-controls" id="optimizerControls">
                     <div class="control-group">
-                        <label for="qualitySlider">Image Quality</label>
+                        <label for="qualitySlider">Quality</label>
                         <div class="slider-container">
                             <input type="range" min="1" max="100" value="80" class="slider" id="qualitySlider">
                             <span class="slider-value" id="qualityValue">80</span>
@@ -956,16 +749,13 @@
                         </div>
                     </div>
 
-                    <button class="optimize-btn" id="optimizeBtn">
-                        <i class="fas fa-magic"></i>
-                        Optimize Image
-                    </button>
+                    <button class="optimize-btn" id="optimizeBtn">Optimize Image</button>
                 </div>
 
                 <div class="result-container" id="resultContainer">
                     <div class="comparison">
                         <div class="image-box">
-                            <h3><i class="fas fa-image"></i> Original Image</h3>
+                            <h3>Original Image</h3>
                             <img id="originalImage" src="" alt="Original Image">
                             <div class="image-info">
                                 <span id="originalSize">0 KB</span>
@@ -973,7 +763,7 @@
                             </div>
                         </div>
                         <div class="image-box">
-                            <h3><i class="fas fa-compress-alt"></i> Optimized Image</h3>
+                            <h3>Optimized Image</h3>
                             <img id="optimizedImage" src="" alt="Optimized Image">
                             <div class="image-info">
                                 <span id="optimizedSize">0 KB</span>
@@ -1014,45 +804,45 @@
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-brain"></i>
+                        <i class="fas fa-search"></i>
                     </div>
-                    <h3>Advanced AI</h3>
-                    <p>Our cutting-edge AI understands complex queries and provides human-like responses with accurate citations.</p>
+                    <h3>Advanced AI Search</h3>
+                    <p>Get precise answers to complex questions with our state-of-the-art natural language processing technology.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-compress-arrows-alt"></i>
+                        <i class="fas fa-image"></i>
                     </div>
                     <h3>Image Optimization</h3>
-                    <p>Reduce image sizes by up to 80% without noticeable quality loss for faster websites.</p>
+                    <p>Reduce image file sizes without sacrificing quality to improve your website's performance.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
                         <i class="fas fa-bolt"></i>
                     </div>
                     <h3>Lightning Fast</h3>
-                    <p>Get results in milliseconds with our optimized algorithms and distributed infrastructure.</p>
+                    <p>Our optimized algorithms deliver results in milliseconds, saving you valuable time.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-shield-alt"></i>
+                        <i class="fas fa-lock"></i>
                     </div>
-                    <h3>Privacy First</h3>
-                    <p>We don't store your personal data or search history. Your privacy is our top priority.</p>
+                    <h3>Privacy Focused</h3>
+                    <p>We don't store your personal data or search history. Your privacy is our priority.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-file-upload"></i>
+                        <i class="fas fa-file-alt"></i>
                     </div>
                     <h3>Document Analysis</h3>
-                    <p>Upload PDFs, Word docs, and more to extract key information and get instant summaries.</p>
+                    <p>Upload and analyze documents to extract key information and get summaries instantly.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
                         <i class="fas fa-mobile-alt"></i>
                     </div>
                     <h3>Fully Responsive</h3>
-                    <p>Beautifully designed interface that works perfectly on all devices from desktop to mobile.</p>
+                    <p>Works perfectly on all devices from desktop to mobile with a beautiful interface.</p>
                 </div>
             </div>
         </section>
@@ -1079,7 +869,7 @@
 
     <!-- Floating Redirect Button -->
     <div class="floating-redirect">
-        <a href="https://www.deepseek.com" class="redirect-btn" target="_blank">
+        <a href="https://deepseek.com" class="redirect-btn" target="_blank">
             <i class="fas fa-external-link-alt"></i>
             Go to Official Site
         </a>
@@ -1095,24 +885,260 @@
                         <li><a href="#">Careers</a></li>
                         <li><a href="#">Blog</a></li>
                     </ul>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-github"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
                 </div>
                 <div class="footer-column">
                     <h3>Features</h3>
                     <ul>
                         <li><a href="#">AI Search</a></li>
-                        <li><a href="#image-optimizer">Image Tools</a></li>
+                        <li><a href="#image-optimizer">Image Optimizer</a></li>
                         <li><a href="#">Document Analysis</a></li>
-                        <li><a href="#">API Access</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h3>Resources</h3>
                     <ul>
                         <li><a href="#">Help Center</a></li>
-                        <li><a href="#">API Docs</a></li>
-                        <li><
+                        <li><a href="#">API Documentation</a></li>
+                        <li><a href="#">Community</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 DeepSeek Web Clone. This is a demo project not affiliated with the official DeepSeek.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Search functionality
+        const searchBtn = document.getElementById('searchBtn');
+        const searchInput = document.getElementById('searchInput');
+        const searchLoading = document.getElementById('searchLoading');
+        const searchResults = document.getElementById('searchResults');
+        const tryDemoBtn = document.getElementById('tryDemoBtn');
+
+        // Sample search results data
+        const sampleResults = [
+            {
+                title: "DeepSeek Official Website",
+                snippet: "DeepSeek is an advanced AI search assistant that provides accurate answers to complex questions by understanding context and intent.",
+                url: "https://deepseek.com"
+            },
+            {
+                title: "How DeepSeek AI Works",
+                snippet: "DeepSeek uses state-of-the-art natural language processing to understand queries and provide human-like responses with citations.",
+                url: "https://deepseek.com/how-it-works"
+            },
+            {
+                title: "DeepSeek Features Overview",
+                snippet: "Explore all the powerful features of DeepSeek including document analysis, web search integration, and conversational AI capabilities.",
+                url: "https://deepseek.com/features"
+            }
+        ];
+
+        function displayResults(results) {
+            let html = '';
+            results.forEach(result => {
+                html += `
+                    <div class="result-card">
+                        <h3 class="result-title">${result.title}</h3>
+                        <p class="result-snippet">${result.snippet}</p>
+                        <a href="${result.url}" class="result-url" target="_blank">
+                            <i class="fas fa-external-link-alt"></i>
+                            ${result.url}
+                        </a>
+                    </div>
+                `;
+            });
+            searchResults.innerHTML = html;
+        }
+
+        searchBtn.addEventListener('click', () => {
+            const query = searchInput.value.trim();
+            if (query) {
+                searchLoading.style.display = 'block';
+                searchResults.innerHTML = '';
+                
+                // Simulate API call with timeout
+                setTimeout(() => {
+                    searchLoading.style.display = 'none';
+                    displayResults(sampleResults);
+                }, 1500);
+            }
+        });
+
+        searchInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                searchBtn.click();
+            }
+        });
+
+        tryDemoBtn.addEventListener('click', () => {
+            searchInput.value = "What is DeepSeek and how does it work?";
+            searchBtn.click();
+        });
+
+        // Image Optimizer Functionality
+        const uploadArea = document.getElementById('uploadArea');
+        const uploadBtn = document.getElementById('uploadBtn');
+        const fileInput = document.getElementById('fileInput');
+        const optimizerControls = document.getElementById('optimizerControls');
+        const qualitySlider = document.getElementById('qualitySlider');
+        const qualityValue = document.getElementById('qualityValue');
+        const formatBtns = document.querySelectorAll('.format-btn');
+        const optimizeBtn = document.getElementById('optimizeBtn');
+        const resultContainer = document.getElementById('resultContainer');
+        const originalImage = document.getElementById('originalImage');
+        const optimizedImage = document.getElementById('optimizedImage');
+        const originalSize = document.getElementById('originalSize');
+        const originalDimensions = document.getElementById('originalDimensions');
+        const optimizedSize = document.getElementById('optimizedSize');
+        const optimizedDimensions = document.getElementById('optimizedDimensions');
+        const downloadBtn = document.getElementById('downloadBtn');
+
+        let currentFile = null;
+        let currentFormat = 'jpeg';
+
+        // Update quality value display
+        qualitySlider.addEventListener('input', () => {
+            qualityValue.textContent = qualitySlider.value;
+        });
+
+        // Format selection
+        formatBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                formatBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                currentFormat = btn.dataset.format;
+            });
+        });
+
+        // File upload handling
+        uploadArea.addEventListener('click', () => fileInput.click());
+        uploadBtn.addEventListener('click', () => fileInput.click());
+
+        fileInput.addEventListener('change', (e) => {
+            if (e.target.files.length > 0) {
+                currentFile = e.target.files[0];
+                const reader = new FileReader();
+                
+                reader.onload = (event) => {
+                    originalImage.src = event.target.result;
+                    
+                    // Show image info
+                    const img = new Image();
+                    img.onload = function() {
+                        originalDimensions.textContent = `${this.width}×${this.height}`;
+                    };
+                    img.src = event.target.result;
+                    
+                    originalSize.textContent = `${(currentFile.size / 1024).toFixed(2)} KB`;
+                    
+                    // Show optimizer controls
+                    optimizerControls.style.display = 'flex';
+                    resultContainer.style.display = 'none';
+                };
+                
+                reader.readAsDataURL(currentFile);
+            }
+        });
+
+        // Drag and drop functionality
+        uploadArea.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            uploadArea.style.borderColor = '#4f46e5';
+            uploadArea.style.backgroundColor = 'rgba(79, 70, 229, 0.05)';
+        });
+
+        uploadArea.addEventListener('dragleave', () => {
+            uploadArea.style.borderColor = '#e5e7eb';
+            uploadArea.style.backgroundColor = 'transparent';
+        });
+
+        uploadArea.addEventListener('drop', (e) => {
+            e.preventDefault();
+            uploadArea.style.borderColor = '#e5e7eb';
+            uploadArea.style.backgroundColor = 'transparent';
+            
+            if (e.dataTransfer.files.length > 0) {
+                currentFile = e.dataTransfer.files[0];
+                fileInput.files = e.dataTransfer.files;
+                
+                const reader = new FileReader();
+                reader.onload = (event) => {
+                    originalImage.src = event.target.result;
+                    
+                    // Show image info
+                    const img = new Image();
+                    img.onload = function() {
+                        originalDimensions.textContent = `${this.width}×${this.height}`;
+                    };
+                    img.src = event.target.result;
+                    
+                    originalSize.textContent = `${(currentFile.size / 1024).toFixed(2)} KB`;
+                    
+                    // Show optimizer controls
+                    optimizerControls.style.display = 'flex';
+                    resultContainer.style.display = 'none';
+                };
+                
+                reader.readAsDataURL(currentFile);
+            }
+        });
+
+        // Optimize image function
+        optimizeBtn.addEventListener('click', () => {
+            if (!currentFile) return;
+            
+            // Show loading state
+            optimizeBtn.disabled = true;
+            optimizeBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Optimizing...';
+            
+            // Simulate optimization process
+            setTimeout(() => {
+                // In a real implementation, you would actually optimize the image here
+                // For demo purposes, we'll just use the original image
+                optimizedImage.src = originalImage.src;
+                
+                // Simulate size reduction (30-70% of original)
+                const reduction = 0.3 + Math.random() * 0.4; // 30-70% reduction
+                const optimizedFileSize = (currentFile.size / 1024) * (1 - reduction);
+                optimizedSize.textContent = `${optimizedFileSize.toFixed(2)} KB`;
+                
+                // Same dimensions
+                optimizedDimensions.textContent = originalDimensions.textContent;
+                
+                // Set up download
+                downloadBtn.href = originalImage.src;
+                downloadBtn.download = `optimized.${currentFormat}`;
+                
+                // Show results
+                resultContainer.style.display = 'block';
+                
+                // Reset button
+                optimizeBtn.disabled = false;
+                optimizeBtn.textContent = 'Optimize Image';
+            }, 1500);
+        });
+
+        // In a real implementation, you would need server-side processing or use a library like Compressor.js
+        // to actually optimize the images. This demo just simulates the process.
+    </script>
+</body>
+</html>
